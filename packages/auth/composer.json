@@ -1,0 +1,44 @@
+{
+    "name": "ai/auth",
+    "description": "authentication package",
+    "type": "laravel-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Md. Imran Ali",
+            "email": "aliimran.pust@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AI\\Auth\\": "src/",
+            "AI\\Auth\\Database\\Factories\\": "database/factories/",
+            "AI\\Auth\\Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "helpers/index.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AI\\Auth\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AI\\Auth\\AIAuthServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.3.3"
+    },
+    "scripts": {
+        "test": "vendor\\bin\\phpunit",
+        "test-f": "vendor\\bin\\phpunit --filter"
+    }
+}
