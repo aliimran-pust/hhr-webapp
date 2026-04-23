@@ -36,6 +36,7 @@ class RegisterController extends Controller
             'permanent_address' => 'required|string',
             'job_description' => 'nullable|string',
             'mobile' => 'required|string|max:20',
+            'transaction_mobile_no' => 'required|string|max:20',
             'email' => 'required|email|max:100',
             'total_amount' => 'nullable|integer',
             't_shirt_size' => 'required|string',

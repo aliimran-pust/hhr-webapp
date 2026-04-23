@@ -66,6 +66,9 @@
                                                     class="img-fluid"> </a>
                         <h1>হরিখালী উচ্চ বিদ্যালয় পুনর্মিলনী - ২০২৬</h1>
                         <p>হরিখালী, সোনাতলা, বগুড়া</p>
+                        <h4 class="badge-warning">
+                            অনুগ্রহ করে বিকাশ/নগদ নম্বর <b>01711774607</b>-এ “Send Money” করুন এবং <b>ট্রানজেকশন আইডি ও স্ক্রিনশট </b> সংযুক্ত করে ফর্মটি পূরণ করুন।
+                        </h4>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -233,6 +236,10 @@
                                         <input type="file" class="form-control" name="payment_receipt_copy" accept=".pdf, .jpg, .jpeg, .png">
                                     </div>
                                     <div class="form-group">
+                                        <label> বিকাশ/নগদ মোবাইল নম্বর</label>
+                                        <input type="text" class="form-control" name="transaction_mobile_no" placeholder="বিকাশ/নগদ মোবাইল নম্বর" required>
+                                    </div>
+                                    <div class="form-group">
                                         <label> ট্রানজেকশন আইডি (বিকাশ/নগদ)</label>
                                         <input type="text" class="form-control" name="transaction_id" placeholder="ট্রানজেকশন আইডি লিখুন " required>
                                     </div>
@@ -291,13 +298,10 @@
                                     <p><strong>পদ্ধতি ২:</strong> মোবাইল ব্যাংকিং পেমেন্ট </p>
                                     <div class="bank-details bg-light p-3">
                                         <p class="mb-1"><strong>বিকাশ নম্বর:</strong></p>
-                                        <p class="mb-2">  </p>
+                                        <p class="mb-2">01356-014946</p>
 
                                         <p class="mb-1"><strong>নগদ নম্বর:</strong></p>
-                                        <p class="mb-2"> </p>
-
-                                        <p class="mb-1"><strong>রকেট নম্বর:</strong></p>
-                                        <p class="mb-2"> </p>
+                                        <p class="mb-2">01356-014946</p>
 
                                     </div>
                                     <br>

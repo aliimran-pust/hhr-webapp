@@ -30,7 +30,8 @@ class MembershipApplication extends Model
         'payment_receipt_copy',
         'transaction_id',
         'application_status',
-        'total_amount'
+        'total_amount',
+        'transaction_mobile_no'
     ];
 
     protected $casts = [
