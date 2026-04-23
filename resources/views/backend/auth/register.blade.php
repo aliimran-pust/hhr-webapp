@@ -67,7 +67,7 @@
                         <h1>হরিখালী উচ্চ বিদ্যালয় পুনর্মিলনী - ২০২৬</h1>
                         <p>হরিখালী, সোনাতলা, বগুড়া</p>
                         <h4 class="badge-warning">
-                            অনুগ্রহ করে বিকাশ/নগদ নম্বর <b>01711774607</b>-এ “Send Money” করুন এবং <b>ট্রানজেকশন আইডি ও স্ক্রিনশট </b> সংযুক্ত করে ফর্মটি পূরণ করুন।
+                            অনুগ্রহ করে বিকাশ/নগদ নম্বর <b>01356-014946</b>-এ “Send Money” করুন এবং <b>ট্রানজেকশন আইডি ও স্ক্রিনশট </b> সংযুক্ত করে ফর্মটি পূরণ করুন।
                         </h4>
                     </div>
                 </div>
@@ -236,8 +236,8 @@
                                         <input type="file" class="form-control" name="payment_receipt_copy" accept=".pdf, .jpg, .jpeg, .png">
                                     </div>
                                     <div class="form-group">
-                                        <label> বিকাশ/নগদ মোবাইল নম্বর</label>
-                                        <input type="text" class="form-control" name="transaction_mobile_no" placeholder="বিকাশ/নগদ মোবাইল নম্বর" required>
+                                        <label> যে নম্বর হতে বিকাশ/নগদ করেছেন সেই নম্বর লিখুন  </label>
+                                        <input type="text" class="form-control" name="transaction_mobile_no" placeholder="যে নম্বর হতে বিকাশ/নগদ করেছেন সেই নম্বর লিখুন " required>
                                     </div>
                                     <div class="form-group">
                                         <label> ট্রানজেকশন আইডি (বিকাশ/নগদ)</label>

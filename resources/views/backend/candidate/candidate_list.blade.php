@@ -79,7 +79,7 @@
                                             <tbody>
                                             @foreach ($candidates as $item)
                                                 <tr>
-                                                    <td>{{ $item->id }}</td>
+                                                    <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $item->name_en }}</td>
                                                     <td>{{ $item->batch_passing_year }}</td>
                                                     <td>{{ $item->mobile }}</td>
