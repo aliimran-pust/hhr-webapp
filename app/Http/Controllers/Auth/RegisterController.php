@@ -19,8 +19,41 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+        // Custom messages for validation
+        $messages = [
+            'transaction_id.unique' => 'এই ট্রানজেকশন আইডিটি ইতিমধ্যে ব্যবহার করা হয়েছে। অনুগ্রহ করে সঠিক ট্রানজেকশন আইডি দিন।',
+            'transaction_id.required' => 'ট্রানজেকশন আইডি প্রদান করা বাধ্যতামূলক।',
+        ];
+
         // Validate the form data
-        $validatedData = $this->validateRequest($request);
+        $validatedData = $request->validate([
+            'name_bn' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+            'father_name' => 'required|string|max:255',
+            'mother_name' => 'required|string|max:255',
+            'batch_passing_year' => 'required|string|max:50',
+            'present_address' => 'required|string',
+            'permanent_address' => 'required|string',
+            'job_description' => 'nullable|string',
+            'mobile' => 'required|string|max:20',
+            'email' => 'required|email|max:100',
+            'total_amount' => 'nullable|integer',
+            't_shirt_size' => 'required|string',
+            'interested_in_guests' => 'required|in:yes,no',
+            'guest_count' => 'nullable|integer|min:1|max:10',
+            'guest_name.*' => 'nullable|string|max:255',
+            'guest_age.*' => 'nullable|string|max:50',
+            'guest_relation.*' => 'nullable|string|max:100',
+            'photo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'payment_receipt_copy' => [
+                'nullable',
+                'file',
+                'mimetypes:application/pdf,image/jpeg,image/png',
+                'max:2048'
+            ],
+            'transaction_id' => 'required|string|max:100|unique:membership_applications,transaction_id',
+            'declaration' => 'required|accepted',
+        ], $messages);
 
         // Process file uploads
         if ($request->hasFile('photo')) {
@@ -70,40 +103,5 @@ class RegisterController extends Controller
         Helper::sendSMS($adminPhone, $adminMessage);
 
         return redirect()->route('register')->with('success', 'আপনার রেজিস্ট্রেশন সফলভাবে সম্পন্ন হয়েছে!');
-    }
-
-    /**
-     * Validate the form request data
-     */
-    protected function validateRequest(Request $request)
-    {
-        return $request->validate([
-            'name_bn' => 'required|string|max:255',
-            'name_en' => 'required|string|max:255',
-            'father_name' => 'required|string|max:255',
-            'mother_name' => 'required|string|max:255',
-            'batch_passing_year' => 'required|string|max:50',
-            'present_address' => 'required|string',
-            'permanent_address' => 'required|string',
-            'job_description' => 'nullable|string',
-            'mobile' => 'required|string|max:20',
-            'email' => 'required|email|max:100',
-            'total_amount' => 'nullable|integer',
-            't_shirt_size' => 'required|string',
-            'interested_in_guests' => 'required|in:yes,no',
-            'guest_count' => 'nullable|integer|min:1|max:10',
-            'guest_name.*' => 'nullable|string|max:255',
-            'guest_age.*' => 'nullable|string|max:50',
-            'guest_relation.*' => 'nullable|string|max:100',
-            'photo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'payment_receipt_copy' => [
-                'nullable',
-                'file',
-                'mimetypes:application/pdf,image/jpeg,image/png',
-                'max:2048'
-            ],
-            'transaction_id' => 'nullable|string|max:100',
-            'declaration' => 'required|accepted',
-        ]);
     }
 }

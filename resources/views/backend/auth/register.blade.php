@@ -220,7 +220,7 @@
                                     <div class="form-group">
                                         <label>মোট ফি (টাকা)</label>
                                         <input type="text" class="form-control bg-white" name="total_amount" id="total_amount" value="1000" readonly>
-                                        <small class="text-muted text-info">সদস্য ফি ১০০০ টাকা + প্রতি অতিথি ১০০০ টাকা</small>
+                                        <small class="text-muted text-info">সদস্য ফি ১০০০ টাকা + প্রতি অতিথি ৫০০ টাকা</small>
                                     </div>
 
                                     <div class="form-group">
@@ -233,7 +233,7 @@
                                         <input type="file" class="form-control" name="payment_receipt_copy" accept=".pdf, .jpg, .jpeg, .png">
                                     </div>
                                     <div class="form-group">
-                                        <label> ট্রানজেকশন আইডি (বিকাশ/রকেট/নগদ)</label>
+                                        <label> ট্রানজেকশন আইডি (বিকাশ/নগদ)</label>
                                         <input type="text" class="form-control" name="transaction_id" placeholder="ট্রানজেকশন আইডি লিখুন " required>
                                     </div>
                                     <div class="form-group">
@@ -268,7 +268,10 @@
                                 <h4><i class="fas fa-money-bill-wave mr-2"></i>সদস্য ফি</h4>
                                 <ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
-                                        <b>জন প্রতি সদস্য ফি</b> <span class="float-right">১,০০০ টাকা</span>
+                                        <b>সদস্য ফি</b> <span class="float-right">১,০০০ টাকা</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>প্রতি অতিথি ফি</b> <span class="float-right">৫০০ টাকা</span>
                                     </li>
                                 </ul>
 
@@ -284,7 +287,7 @@
                                         <p class="mb-2"> হিসাবের নাম্বারঃ 20507770233205466</p>
                                         <p class="mb-2"> রাউটিং নাম্বারঃ 125270607</p>
                                     </div>
-
+                                    <br>
                                     <p><strong>পদ্ধতি ২:</strong> মোবাইল ব্যাংকিং পেমেন্ট </p>
                                     <div class="bank-details bg-light p-3">
                                         <p class="mb-1"><strong>বিকাশ নম্বর:</strong></p>
@@ -296,6 +299,12 @@
                                         <p class="mb-1"><strong>রকেট নম্বর:</strong></p>
                                         <p class="mb-2"> </p>
 
+                                    </div>
+                                    <br>
+                                    <p><strong>Technical Support </strong> </p>
+                                    <div class="bank-details bg-light p-3">
+                                        <p class="mb-1"><strong>Md. Al-Amin Islam</strong></p>
+                                        <p class="mb-2"> 01711774607</p>
                                     </div>
 
                                 </div>
@@ -331,14 +340,15 @@
 <script>
     $(document).ready(function() {
         function calculateTotal() {
-            var perPersonFee = 1000;
+            var memberFee = 1000;
+            var guestFee = 500;
             var guestCount = 0;
 
             if ($('input[name="interested_in_guests"]:checked').val() === 'yes') {
                 guestCount = parseInt($('#guest_count').val()) || 0;
             }
 
-            var total = (1 + guestCount) * perPersonFee;
+            var total = memberFee + (guestCount * guestFee);
             $('#total_amount').val(total);
         }
 
