@@ -143,7 +143,7 @@
 
                                     <div class="form-group">
                                         <label>পরীক্ষার সাল </label>
-                                        <input type="number" class="form-control" name="batch_passing_year" placeholder="পাশের সাল">
+                                        <input type="number" class="form-control" name="batch_passing_year" placeholder="পরীক্ষার সাল">
                                     </div>
 
                                     <div class="row">
